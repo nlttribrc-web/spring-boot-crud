@@ -12,6 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.ltp.gradesubmission.exception.JwtAuthenticationEntryPoint;
+
 @Configuration
 public class WebSecurityConfig {
 
@@ -19,6 +21,12 @@ public class WebSecurityConfig {
 			"/v3/api-docs/**", "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
 			"/configuration/security", "/swagger-ui/**", "/webjars/**", "/swagger-ui.html", "/api/auth/**",
 			"/api/test/**", "/authenticate" };
+
+	private final JwtAuthenticationEntryPoint jwtEntryPoint;
+
+	public WebSecurityConfig(JwtAuthenticationEntryPoint jwtEntryPoint) {
+		this.jwtEntryPoint = jwtEntryPoint;
+	}
 
 	@Autowired
 	private JwtRequestFilter jwtRequestFilter;
@@ -40,6 +48,9 @@ public class WebSecurityConfig {
 				.authorizeHttpRequests(
 						auth -> auth.requestMatchers(WHITE_LIST_URL).permitAll().anyRequest().authenticated());
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+		http.exceptionHandling(exception -> exception
+            .authenticationEntryPoint(jwtEntryPoint)
+        );
 		return http.build();
 	}
 }

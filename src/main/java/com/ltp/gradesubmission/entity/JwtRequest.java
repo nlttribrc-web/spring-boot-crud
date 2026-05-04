@@ -2,11 +2,16 @@ package com.ltp.gradesubmission.entity;
 
 import java.io.Serializable;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 public class JwtRequest implements Serializable {
 
 	private static final long serialVersionUID = 5926468583005150707L;
 	
+	@Schema(example = "username")
 	private String username;
+	
+	@Schema(example = "password")
 	private String password;
 	
 	//need default constructor for JSON Parsing

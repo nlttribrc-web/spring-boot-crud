@@ -1,5 +1,6 @@
 package com.ltp.gradesubmission.config;
 
+import org.springdoc.core.properties.SwaggerUiConfigParameters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,12 +13,13 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 public class SwaggerConfig {
 
 	@Bean
-	public OpenAPI customOpenAPI() {
+	public OpenAPI customOpenAPI(SwaggerUiConfigParameters params) {
+		params.setPersistAuthorization(true);
 		
 		return new OpenAPI()
-				.addSecurityItem(new SecurityRequirement().addList("JavaInUseSecurityScheme"))
-				.components(new Components().addSecuritySchemes("JavaInUseSecurityScheme", new SecurityScheme()
-						.name("JavaInUseSecurityScheme").type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT")));
+				.addSecurityItem(new SecurityRequirement().addList("BearerAuth"))
+				.components(new Components().addSecuritySchemes("BearerAuth", new SecurityScheme()
+						.name("BearerAuth").type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT")));
 		
 	}
 }

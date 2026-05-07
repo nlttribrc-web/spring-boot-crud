@@ -16,8 +16,6 @@ window.onload = function () {
           const token = data.accessToken || data.token;
 
           if (token) {
-            console.log("JWT detected:", token);
-
             ui.preauthorizeApiKey("BearerAuth", token);
 
             localStorage.setItem("token", token);

@@ -13,7 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.ltp.gradesubmission.exception.JwtAuthenticationEntryPoint;
+import com.ltp.gradesubmission.infrastructure.security.jwt.JwtAuthenticationEntryPoint;
+import com.ltp.gradesubmission.infrastructure.security.jwt.JwtRequestFilter;
 
 @Configuration
 public class WebSecurityConfig {

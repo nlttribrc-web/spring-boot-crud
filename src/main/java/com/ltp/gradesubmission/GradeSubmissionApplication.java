@@ -7,11 +7,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.ltp.gradesubmission.entity.Course;
-import com.ltp.gradesubmission.entity.Student;
-import com.ltp.gradesubmission.repository.CourseRepository;
-import com.ltp.gradesubmission.repository.GradeRepository;
-import com.ltp.gradesubmission.repository.StudentRepository;
+import com.ltp.gradesubmission.domain.entity.Course;
+import com.ltp.gradesubmission.domain.entity.Student;
+import com.ltp.gradesubmission.application.repository.CourseRepository;
+import com.ltp.gradesubmission.application.repository.GradeRepository;
+import com.ltp.gradesubmission.application.repository.StudentRepository;
 
 @SpringBootApplication
 public class GradeSubmissionApplication implements CommandLineRunner {

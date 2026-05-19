@@ -1,4 +1,4 @@
-package com.ltp.gradesubmission.adapter.dto;
+package com.ltp.gradesubmission.presentation.dto;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.ltp.gradesubmission.adapter.controllers;
+package com.ltp.gradesubmission.presentation.controllers;
 
 import java.util.Objects;
 
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ltp.gradesubmission.adapter.dto.JwtRequest;
-import com.ltp.gradesubmission.adapter.dto.JwtResponse;
 import com.ltp.gradesubmission.infrastructure.security.jwt.JwtTokenUtil;
+import com.ltp.gradesubmission.presentation.dto.JwtRequest;
+import com.ltp.gradesubmission.presentation.dto.JwtResponse;
 
 @RestController
 @CrossOrigin

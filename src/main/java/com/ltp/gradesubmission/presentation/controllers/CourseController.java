@@ -1,4 +1,4 @@
-package com.ltp.gradesubmission.adapter.controllers;
+package com.ltp.gradesubmission.presentation.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.ltp.gradesubmission.adapter.controllers;
+package com.ltp.gradesubmission.presentation.controllers;
 
 import java.util.List;
 

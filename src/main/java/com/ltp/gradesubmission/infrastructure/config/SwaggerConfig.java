@@ -1,4 +1,4 @@
-package com.ltp.gradesubmission.config;
+package com.ltp.gradesubmission.infrastructure.config;
 
 import org.springdoc.core.properties.SwaggerUiConfigParameters;
 import org.springframework.context.annotation.Bean;

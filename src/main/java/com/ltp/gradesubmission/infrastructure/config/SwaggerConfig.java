@@ -1,6 +1,5 @@
 package com.ltp.gradesubmission.infrastructure.config;
 
-import org.springdoc.core.properties.SwaggerUiConfigParameters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,8 +12,7 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 public class SwaggerConfig {
 
 	@Bean
-	public OpenAPI customOpenAPI(SwaggerUiConfigParameters params) {
-		params.setPersistAuthorization(true);
+	public OpenAPI customOpenAPI() {
 		
 		return new OpenAPI()
 				.addSecurityItem(new SecurityRequirement().addList("BearerAuth"))
